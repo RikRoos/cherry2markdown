@@ -1,0 +1,139 @@
+# cherry2md.toml
+
+# Documentation of this TOML is found below the config.
+#
+# https://www.w3schools.io/file/markdown-comments/
+
+[data]
+   skip_notes = []
+
+[filepaths]
+   # Obsidian root is the Vault.
+   images_link = "99. Attachments/images"
+   pdf_link = "99. Attachments/pdf"
+   others_link = "99. Attachments/others"
+
+[markup]
+   horizontol-rule = "---"
+   italic = "_"
+   heavy = "**"                     # is same as bold
+   strikethrough = "~~"
+   # background-color = "<mark>"
+   background-color = "=="
+
+   [markup.supscript]
+      method = "translate"
+      normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
+      target = "ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖ۹ʳˢᵗᵘᵛʷˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾"
+      tag    = "sup"
+
+   [markup.subscript]
+      method = "translate"
+      normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
+      target = "ₐ₈CDₑբGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥwₓᵧZₐ♭꜀ᑯₑբ₉ₕᵢⱼₖₗₘₙₒₚ૧ᵣₛₜᵤᵥwₓᵧ₂₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎"
+      tag    = "sub"
+    
+[note]
+   missing_linklabel.max_chars = 99
+   missing_linklabel.shortened_text = "...(more)"
+   # possible vars to use inside top and bottom text: see documentation
+   fmt_timestamp_created  = "%Y-%m-%d %H:%M:%S"
+   fmt_timestamp_exported = "%Y-%m-%d %H:%M:%S %z"
+
+   [note.linebreak]
+      append_each_line = "  "       # 2 spaces
+      replace_empty_line_with = ""  # e.g. "\\" or "<br>"
+   
+   [note.title]
+      print = true
+      # to please Obsidian, start with empty line to avoid error-message regarding Obsidian property values
+      text = '''
+             ![[notelabel-multimeter.png]]
+
+             ***Title:*** _{parent_title} >>> {title}_ &nbsp;&nbsp;&nbsp;***Creation:*** _{timestamp_created}_
+                
+             ---
+             '''
+      # text = '''
+      #        ![[notelabel-linux.png]]
+      #
+      #        ***Title:*** _{parent_title} >>> {title}_ &nbsp;&nbsp;&nbsp;***Creation:*** _{timestamp_created}_
+      #           
+      #        ---
+      #        '''
+      # text = '''
+      #        ![[python-logo-master-v3-TM-scaled.png]]
+      #
+      #        ---
+      #        ***Title:*** _{parent_title} >>> {title}_ &nbsp;&nbsp;&nbsp;***Creation:*** _{timestamp_created}_
+      #           
+      #        ---
+      #        '''
+   [note.closing]
+      print = true
+      text = '''
+             ---
+             _End_ 
+            
+             <!-- Cherrytree note exported at {timestamp_exported} ┆ id: {unique_id} -->
+             '''
+               
+
+# ==============
+# Documentation:
+# ==============
+# 
+# ----------------
+# Horizontal rule:
+# ----------------
+#  Possible values:
+#  ---             3 hyphens or more
+#  ___             3 underscores or more
+#  ***             3 asterisks or more
+#  <hr/>           hmtl-tag
+
+# -----
+# Bold:
+# -----
+#  Possible values:
+#  __              2 underscores
+#  **              2 asterisks
+
+# -------
+# Italic:
+# -------
+#  Possible values:
+#   _              1 underscore
+#   *              1 asterisk 
+
+# --------------
+# Strikethrough:
+# --------------
+#  Possible values:
+#  ~~              2 tilders
+
+# ------------
+# underlining:
+# ------------
+
+# -----------------
+# Background-color:
+# -----------------
+#  Markdown does not support background colors.
+#  But converters to HTML and PDF like pandoc know to handle some markup.
+#
+#  Possible values:
+#  ""              just print the text without any kind of markup
+#  <mark>          <mark>Highlighted text</markup>
+#  <mark-style>    <mark style="background-color: #FFFF00">Highlighted text</mark>
+#  <div-style>     <div style="background-color: #FFFF00">Highlighted text</mark>
+#  ==              ==Highlighted text==
+
+# ------------------------
+# Superscript or Subscript
+# ------------------------
+#  Markdown does not support <super> and <sub> markup.
+#  But converters to HTML and PDF like pandoc know to handle some markup.
+# 
+#  method: "tag" or "translate"
+
