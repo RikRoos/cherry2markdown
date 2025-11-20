@@ -32,9 +32,6 @@ debug_bigfile = False
 # Base dir for other dirs
 _data_dir = None
 
-# Directory for storing the Cherrytree XML-files.
-xml_dir = None
-
 # Directory used for the output of generated markdown notes
 target_dir = None
 
@@ -194,7 +191,7 @@ def clean_env():
     
 
 def init_config():
-    global v1, v2, v3, dry_run ,xml_dir, markdown_dir
+    global v1, v2, v3, dry_run
     global _data_dir, log_dir, log_filepath, xml_filepath
     global markdown_dir, images_dir, pdf_dir, others_dir, attachment_index
     global clean, _stdout_filepath, quiet, abs_path, unique_id, debug_bigfile
@@ -213,17 +210,16 @@ def init_config():
         case _: v1, v2 = True, True
 
     # init the global vars
-    abs_path = args.absolute_path
+    attachment_index = int(args.attachment_index)
     quiet = args.quiet
     dry_run = args.dryrun
+    xml_filepath = Path(args.xml_filepath)  # the Cherrytree xml-file
+    # paths related
+    abs_path = args.absolute_path
     unique_id = args.unique_id
-    xml_filepath = Path(args.xml_filepath)
     _data_dir = args.data_dir or Path('./data')
     _data_dir = (Path('.').absolute() / _data_dir).resolve()
-    attachment_index = int(args.attachment_index)
-    # to secure the users data in case of use of the clean_env option:
     _data_dir = _data_dir / '_ch2md_'
-    xml_dir = _data_dir / 'xml'
     markdown_dir = _data_dir / 'markdown'
     images_dir = markdown_dir / prefs.get('filepaths').get('images_link')
     pdf_dir = markdown_dir / prefs.get('filepaths').get('pdf_link')
