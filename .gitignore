@@ -1,6 +1,8 @@
 # this project
 data/
+xmldata/
 x__resources/
+tree.txt
 
 
 # App specific
