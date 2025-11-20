@@ -4,7 +4,7 @@ Cherry2md is a utility for converting Cherrytree notes to _markdown_. The tool a
 
 ## A Foreword
 
-For a long time I took notes using Cherrytree. At some point un time, more and more “fancy” Markdown-based note-taking apps started to appear. To switch over, I first needed to convert my existing notes from XML to Markdown. Cherrytree offers several export formats, but none of them produce markdown files with full support for links and images.
+For a long time I took notes using Cherrytree. At some point in time, more and more “fancy” Markdown-based note-taking apps started to appear. To switch over, I first needed to convert my existing notes from XML to Markdown. Cherrytree offers several export formats, but none of them produce markdown files with full support for links and images.
 
 One option is to export an HTML dump from Cherrytree. In theory, that can be converted to Markdown. However, over the years I had used Cherrytree’s markup tools in many different and inconsistent ways. I realized I could devise some export logic with a handful of rules, but I would need to build it myself. And so I did. The result is this Python library.
 
