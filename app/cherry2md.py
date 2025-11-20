@@ -1,5 +1,5 @@
 #!/bin/python
-# ch2md.py
+# app/cherry2md.py
 '''
 Runner file.
 '''

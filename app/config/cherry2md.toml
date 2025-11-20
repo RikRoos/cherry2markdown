@@ -51,13 +51,18 @@
       # on line 1 :  # <filename>.
       # If you don't like that feature, switch it off in the Obsidian configuration and enable the
       # output of the text below:
-      print = false
+      print = true
       text = '''
-             # {title}
 
              ---
-
              '''
+
+      # text = '''
+      #        # {title}
+      #
+      #        ---
+      #
+      #        '''
    [note.closing]
       print = true
       text = '''

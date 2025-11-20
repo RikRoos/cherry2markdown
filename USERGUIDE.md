@@ -45,7 +45,7 @@ Take a look at the *command-line options* and the *TOML file* in the sections th
 
 ## Installation Instructions
 
-These steps show how to install and run **cherry2markdown** in a clean and isolated environment. It is recommended to keep your development tools inside a dedicated directory (e.g., `~/myprojects`) and to use a Python virtual environment.
+These steps show how to install and run **cherry2md** in a clean and isolated environment. It is recommended to keep your development tools inside a dedicated directory (e.g., `~/myprojects`) and to use a Python virtual environment.
 
 ### 1. Create a working directory
 
@@ -95,9 +95,9 @@ This allows you to modify the source code while using the installed command.
 You can now view the available command-line options:
 
 ```bash
-ch2md --help
+cherry2md --help
 # or (depending on your entry point):
-python ch2md.py --help
+python cherry2md.py --help
 ```
 
 ### 6. Run the converter
@@ -107,20 +107,20 @@ python ch2md.py --help
 To convert a Cherrytree XML database:
 
 ```bash
-ch2md <path-to-xml-file>
+cherry2md <path-to-xml-file>
 ```
 
 Or, if no console script is defined:
 
 ```bash
-python app/ch2md.py <path-to-xml-file>
+python app/cherry2md.py <path-to-xml-file>
 ```
 
 Verbose mode examples:
 
 ```bash
-ch2md <path-to-xml-file> -v     # verbose
-ch2md <path-to-xml-file> -vv    # very verbose
+cherry2md <path-to-xml-file> -v     # verbose
+cherry2md <path-to-xml-file> -vv    # very verbose
 ```
 
 ---
@@ -241,31 +241,33 @@ The converter can be customized using a TOML file (for content-related settings)
 Obsidian has a feature that automatically assigns each note a `# chapter title` based on the Markdown filename.  
 If this is not desired and the user disables that feature, the converter can be configured to generate a title instead.
 
+In the TOML file the prefix text is current set to only a line `---`. You can embed the variable `{title}` to display the generated title.
+
 ---
 ### Command-line Arguments
 
 The converter always requires at least one argument: the path to the XML file that should be converted.
 
 ``` bash
-$ python ch2md.py <path-to-xml-file>
+$ python cherry2md.py <path-to-xml-file>
 ```
 
 Additional options can be provided, for example to display extra information about the results:
 
 ```bash
-$ python ch2md.py <path-to-xml-file> -v
+$ python cherry2md.py <path-to-xml-file> -v
 ```
 
 Or to display even more verbose output:
 
 ```bash
-$ python ch2md.py <path-to-xml-file> -vv
+$ python cherry2md.py <path-to-xml-file> -vv
 ```
 
 The available runtime command-line arguments can be listed with:
 
 ```bash
-$ python ch2md.py --help
+$ python cherry2md.py --help
 ```
 
 ---
@@ -283,7 +285,7 @@ $ python ch2md.py --help
 | `-h, --help`                              | Show this help message and exit.                                                                                                                                                                                                                                                                                                                                                                                         |
 | `-a, --absolute_path`                     | References inside markdown notes: use absolute path instead of relative paths in references to other files like images.<br><br>Default a relative path is generated because that makes it possible to move the generated notes-tree to a other place in the filesystem afterwards. In case you like to browse your notes-tree in a sandwiched environment, for example with 'jail', you can opt in for an absolute path. |
 | `-c, --clean_env`                         | Clean up the output environment: purge the directory 'markdown' from the 'data_dir' directory.<br>You will be prompted for confirmation `[y/n]`."<br><br>-> Be carefull not to run this option after having made changes manually to your newly created markdown notes!                                                                                                                                                  |
-| `-d, --data_dir DATA_DIR`                 | Directory for containing the output, will be created if not existing already.<br>default: `'./data/_ch2md_'` .<br><br>For security reasons, the data directory is always followed by a system generated directory called _ch2md_                                                                                                                                                                                         |
+| `-d, --data_dir DATA_DIR`                 | Directory for containing the output, will be created if not existing already.<br>default: `'./data/_cherry2md_'` .<br><br>For security reasons, the data directory is always followed by a system generated directory called _ch2md_                                                                                                                                                                                         |
 | `-x, --attachment_index ATTACHMENT_INDEX` | Starting number for indexing attachment files; default is 1                                                                                                                                                                                                                                                                                                                                                              |
 | `-q, --quiet`                             | No output information on screen but redirect all info to file `'stdout.log'`                                                                                                                                                                                                                                                                                                                                             |
 | `-u, --unique_id UNIQUE_ID`               | Convert only a specific Cherrytree-note with the Cherrytree-note unique_id (a XML-attribute)                                                                                                                                                                                                                                                                                                                                     |
