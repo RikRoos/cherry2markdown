@@ -91,13 +91,13 @@ python app/cherry2md.py --help
 
 ⚠️ Warning: Before running the converter on your real Cherrytree database, make sure to read the remainder of this document. Certain configuration options, export behaviors, and recommended workflows may influence the results. Performing a few test runs first is strongly advised.
 
-To convert a Cherrytree XML database:
+Create a sub-directory to store the XM-files exported from Cherrytree, then move the XML-file(s) into this new subdir:
 
 ```bash
-cherry2md <path-to-xml-file>
+mkdir xml-files
 ```
 
-Or, if no console script is defined:
+To convert a Cherrytree XML database:
 
 ```bash
 python app/cherry2md.py <path-to-xml-file>
@@ -106,8 +106,8 @@ python app/cherry2md.py <path-to-xml-file>
 Verbose mode examples:
 
 ```bash
-cherry2md <path-to-xml-file> -v     # verbose
-cherry2md <path-to-xml-file> -vv    # very verbose
+python app/cherry2md.py <path-to-xml-file> -v     # verbose
+python app/cherry2md.py <path-to-xml-file> -vv    # very verbose
 ```
 
 ---
