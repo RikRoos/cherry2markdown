@@ -8,7 +8,7 @@
 1. [Installation Instructions](#Installation-Instructions)
 	- [1. Create a working directory](#1-Create-a-working-directory)
 	- [2. Clone the repository](#2-Clone-the-repository)
-	- [3. Create and activate a virtual environment](#3.-Create-and-activate-a-virtual-environment)
+	- [3. Create and activate a virtual environment](#3-Create-and-activate-a-virtual-environment)
 	- [5. Verify installation](#5-Verify-installation)
 	- [6. Run the converter](#6-Run-the-converter)
 1. [Some Design Choices](#Some-Design-Choices)
