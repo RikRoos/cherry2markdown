@@ -2,7 +2,7 @@
 
 `cherry2md.py` - converter Cherrytree notes to markdown [🌳📄] -----> [⚙️] -----> [📝]
 
-** Table of Contents **
+**Table of Contents**
 
 1. [Preface](#Preface)
 1. [Installation Instructions](#Installation%20Instructions)

@@ -12,7 +12,7 @@ Overall, it required quite a bit of effort, as there was always some small devia
 
 At that time, I had not yet switched to Obsidian. That’s unfortunate, because I could have taken Obsidian’s Markdown style and other conventions into account from the beginning. For example, I had no reason to expect that Obsidian’s tree structure always starts with folders and only then lists the individual notes. But in the end, anything was better than using multiple note-taking tools side by side. That said, I added some Obsidian-specific optimizations toward the end of the project, as I had already switched to using Obsidian for new notes.
 
-I wrote a userguide to explain the features of cherry2md, you can find it here: [userguide cherry2md](https://github.com/rikroos/cherry2md/blob/master/USERGUIDE.md)
+I wrote a userguide to explain the features of cherry2md, you can find it here: [userguide cherry2md](https://github.com/rikroos/cherry2markdown/blob/master/USERGUIDE.md)
 
 ##  My Advice
 
