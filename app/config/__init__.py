@@ -11,49 +11,49 @@ from cherry2mdlib.utils import Cherry2mdConfigError, read_kbd_input,\
 
 # global vars
                            
-'Commandline option: verbosity indicator'
+# Commandline option: verbosity indicator
 v1, v2, v3, = False, False, False
 
-'Commandline option: quiet; if True stdout goes to a file .'
+# Commandline option: quiet; if True stdout goes to a file .
 quiet = False
 
-'Commandline option: dry run; if True no files are created.'
+# Commandline option: dry run; if True no files are created.
 dry_run = False
 
-'Commandline option: unique_id, convert only that note'
+# Commandline option: unique_id, convert only that note
 unique_id = None
 
-'Commandline option: absolute_path, for references inside notes'
+# Commandline option: absolute_path, for references inside notes
 abs_path = False
 
-'Environment var: write all notes in one bigfile (debugging)'
+# Environment var: write all notes in one bigfile (debugging)
 debug_bigfile = False
  
-'Base dir for other dirs'
+# Base dir for other dirs
 _data_dir = None
 
-'Directory for storing the Cherrytree XML-files.'
+# Directory for storing the Cherrytree XML-files.
 xml_dir = None
 
-'Directory used for the output of generated markdown notes'
+# Directory used for the output of generated markdown notes
 target_dir = None
 
-'Directory used for the output of generated attachments like PDF and others.'
+# Directory used for the output of generated attachments like PDF and others.
 markdown_dir, images_dir, pdf_dir, others_dir = None, None, None, None
 
-'Directory used for log files.'
+# Directory used for log files.
 log_dir = None
 
-'File opened for reading XML data'
+# File opened for reading XML data
 xml_filepath = None
 
-'File opened for logging'
+# File opened for logging
 log_filepath = None
 
-'File opened for standard output redirection'
+# File opened for standard output redirection
 _stdout_filepath = None
 
-'Start index number for numbering attachment files.'
+# Start index number for numbering attachment files.
 attachment_index = 1
 
 # TOML config file preferences
@@ -121,7 +121,7 @@ def parse_arguments():
     parser.add_argument(
             '-c', '--clean_env', action='store_true',
             help=textwrap.dedent('''\
-            clean up the output environment: purge the directory 'notes' from 
+            clean up the output environment: purge the directory 'markdown' from 
             the 'data_dir' directory. You will be prompted for confirmation [y/n].
 
             -> Be carefull not to run this option after having made changes 
@@ -132,7 +132,7 @@ def parse_arguments():
             '-d', '--data_dir', 
             help=textwrap.dedent('''\
             directory for containing the output, will be created if not existing
-            already - default: '../data/_ch2md_' .
+            already - default: './data/_ch2md_' .
             
             For security reasons, the data directory is always followed by a 
             system generated directory called _ch2md_\n\n'''))
@@ -154,7 +154,7 @@ def parse_arguments():
     parser.add_argument(
             '-u', '--unique_id',
             help=textwrap.dedent('''\
-            convert only the note with the specific Cherrynote unique_id (XML-attribute)\n\n'''))
+            convert only a specific Cherry-note with the Cherry-note unique_id (a XML-attribute)\n\n'''))
 
     # verbosity
     parser.add_argument(
@@ -218,7 +218,7 @@ def init_config():
     dry_run = args.dryrun
     unique_id = args.unique_id
     xml_filepath = Path(args.xml_filepath)
-    _data_dir = args.data_dir or Path('../data')
+    _data_dir = args.data_dir or Path('./data')
     _data_dir = (Path('.').absolute() / _data_dir).resolve()
     attachment_index = int(args.attachment_index)
     # to secure the users data in case of use of the clean_env option:
