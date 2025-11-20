@@ -84,9 +84,7 @@ pip install --upgrade pip
 You can now view the available command-line options:
 
 ```bash
-cherry2md --help
-# or (depending on your entry point):
-python cherry2md.py --help
+python app/cherry2md.py --help
 ```
 
 ### 5. Run the converter
