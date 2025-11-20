@@ -18,7 +18,7 @@ I wrote a userguide to explain the features of cherry2md, you can find it here: 
 
 Start with a few test runs and inspect the results carefully in your note-taking app. You may find certain behaviors you want to adjust in the source.
 
-Also take a close look at the TOML configuration file and study the results it produces. Review the CLI parameters of the program (`cherry2md.py`) Python runner as well, these can help a lot by analyzing the output.
+Also take a close look at the TOML configuration file and study the results it produces. Review the CLI parameters of the Python program (`cherry2md.py`) runner as well, these can help a lot by analyzing the output.
 
 It may also be helpful to use the option that exports **all notes into one large file**. With a text editor you can then search for the output of specific notes. This can be more convenient than using text processing tools like *grep* or *ripgrep* across the exported directory tree. Another advantage is that you can do a *diff* on these large output files after making changes to the configuration or source code. Sometimes a modification can improve the layout of some notes but can also make other notes worse; with a *diff* this can be spotted more easily.
 
