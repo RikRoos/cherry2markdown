@@ -9,7 +9,6 @@
 	- [1. Create a working directory](#1-Create-a-working-directory)
 	- [2. Clone the repository](#2-Clone-the-repository)
 	- [3. Create and activate a virtual environment](#3.-Create-and-activate-a-virtual-environment)
-	- [4. Install the package](#4-Install-the-package)
 	- [5. Verify installation](#5-Verify-installation)
 	- [6. Run the converter](#6-Run-the-converter)
 1. [Some Design Choices](#Some-Design-Choices)
@@ -80,17 +79,7 @@ Upgrade `pip` (recommended):
 pip install --upgrade pip
 ```
 
-### 4. Install the package
-
-Install the project in editable/development mode:
-
-```bash
-pip install -e .
-```
-
-This allows you to modify the source code while using the installed command.
-
-### 5. Verify installation
+### 4. Verify installation
 
 You can now view the available command-line options:
 
@@ -100,7 +89,7 @@ cherry2md --help
 python cherry2md.py --help
 ```
 
-### 6. Run the converter
+### 5. Run the converter
 
 ⚠️ Warning: Before running the converter on your real Cherrytree database, make sure to read the remainder of this document. Certain configuration options, export behaviors, and recommended workflows may influence the results. Performing a few test runs first is strongly advised.
 
@@ -241,7 +230,7 @@ The converter can be customized using a TOML file (for content-related settings)
 Obsidian has a feature that automatically assigns each note a `# chapter title` based on the Markdown filename.  
 If this is not desired and the user disables that feature, the converter can be configured to generate a title instead.
 
-In the TOML file the prefix text is current set to only a line `---`. You can embed the variable `{title}` to display the generated title.
+In the TOML file the prefix text is currently set to only a divider line `---`. You can embed the variable `{title}` to display the generated title.
 
 ---
 ### Command-line Arguments
