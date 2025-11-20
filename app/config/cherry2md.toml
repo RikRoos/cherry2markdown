@@ -1,6 +1,6 @@
 # cherry2md.toml
 
-# Documentation of this TOML is found below the config.
+# DOCUMENTATION of this TOML is found BELOW this config.
 #
 # https://www.w3schools.io/file/markdown-comments/
 
@@ -8,7 +8,7 @@
    skip_notes = []
 
 [filepaths]
-   # Obsidian root is the Vault.
+   # Obsidian root is the Vault self.
    images_link = "99. Attachments/images"
    pdf_link = "99. Attachments/pdf"
    others_link = "99. Attachments/others"
@@ -45,38 +45,37 @@
       replace_empty_line_with = ""  # e.g. "\\" or "<br>"
    
    [note.title]
-      print = true
-      # to please Obsidian, start with empty line to avoid error-message regarding Obsidian property values
-      text = '''
-             ![[notelabel-multimeter.png]]
+      # To please Obsidian, start with empty line to avoid error-message regarding Obsidian property values
 
-             ***Title:*** _{parent_title} >>> {title}_ &nbsp;&nbsp;&nbsp;***Creation:*** _{timestamp_created}_
-                
+      # Obsidian has a feauture to insert the filename of the markdown-file as a header 
+      # on line 1 :  # <filename>.
+      # If you don't like that feature, switch it off in the Obsidian configuration and enable the
+      # output of the text below:
+      print = false
+      text = '''
+             # {title}
+
              ---
+
              '''
-      # text = '''
-      #        ![[notelabel-linux.png]]
-      #
-      #        ***Title:*** _{parent_title} >>> {title}_ &nbsp;&nbsp;&nbsp;***Creation:*** _{timestamp_created}_
-      #           
-      #        ---
-      #        '''
-      # text = '''
-      #        ![[python-logo-master-v3-TM-scaled.png]]
-      #
-      #        ---
-      #        ***Title:*** _{parent_title} >>> {title}_ &nbsp;&nbsp;&nbsp;***Creation:*** _{timestamp_created}_
-      #           
-      #        ---
-      #        '''
    [note.closing]
       print = true
       text = '''
              ---
-             _End_ 
-            
-             <!-- Cherrytree note exported at {timestamp_exported} ┆ id: {unique_id} -->
+             ***Parent node:*** _{parent_title}_
+
+             Created             | Exported             | Cherry-ID
+             --------------------|----------------------|--------------
+             {timestamp_created} | {timestamp_exported} | {unique_id}
+             
+             _END_
              '''
+      # text = '''
+      #        ---
+      #        _End_ 
+      #       
+      #        <!-- Cherrytree note exported at {timestamp_exported} ┆ id: {unique_id} -->
+      #        '''
                
 
 # ==============
@@ -110,7 +109,7 @@
 # Strikethrough:
 # --------------
 #  Possible values:
-#  ~~              2 tilders
+#  ~~              2 tildes
 
 # ------------
 # underlining:
